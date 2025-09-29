@@ -1,7 +1,3 @@
-/*
- * LCD Clock Display
- * Author : Usman
- */ 
 
 #include <avr/io.h>
 #define F_CPU 16000000UL
@@ -101,3 +97,4 @@ void LCD_Send_String(char* str)
         str++;
     }
 }
+
