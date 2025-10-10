@@ -24,14 +24,14 @@ int main(void)
         // Format time into hh:mm:ss
         sprintf(timeStr, "%02d:%02d:%02d", hours, minutes, seconds);
 
-        LCD_Send_Command(0x80);   // Move cursor to first row
+        LCD_Send_Command(0x80);   
         LCD_Send_String("   Digital Clock");
-        LCD_Send_Command(0xC0);   // Move to second row
+        LCD_Send_Command(0xC0);   
         LCD_Send_String(timeStr);
 
-        _delay_ms(1); // 1 second delay
+        _delay_ms(1); 
 
-        // Increment time
+    
         seconds++;
         if(seconds == 60){
             seconds = 0;
@@ -55,13 +55,13 @@ void LCD_init(void)
     
     _delay_ms(50);
     
-    LCD_Send_Command(0x38); //8-bit, 2 Lines, 5x7 matrix
+    LCD_Send_Command(0x38); 
     _delay_ms(1);
-    LCD_Send_Command(0x0C); // Display ON, cursor OFF
+    LCD_Send_Command(0x0C); 
     _delay_ms(1);
-    LCD_Send_Command(0x01); // Clear display
+    LCD_Send_Command(0x01); 
     _delay_ms(2);
-    LCD_Send_Command(0x06); // Entry mode set, increment cursor
+    LCD_Send_Command(0x06); 
     _delay_ms(1);
 }
 
@@ -97,4 +97,5 @@ void LCD_Send_String(char* str)
         str++;
     }
 }
+
 
